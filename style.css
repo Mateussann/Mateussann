@@ -85,7 +85,7 @@ header > .interface{
     justify-content: space-between;
 }
 
-header a{
+header nav a{
     color: #d1c9c99f;
     text-decoration: none;
     /*transformando inline em bloco*/
@@ -94,7 +94,7 @@ header a{
     
 }
 
-header a:hover{
+header nav.cabeçalho-link a:hover{
     color: #fff;
     transform: scale(1.05);
 
@@ -103,9 +103,69 @@ header a:hover{
 header nav ul{
     list-style-type: none;
 }
-header nav ul li{
+header nav.cabeçalho-link ul li{
     display: inline-block ;
     padding: 0 40px;
+}
+
+/* menu-mobile */
+.overlay-menu{
+    background-color: #000000a8;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+
+.btn-abrir-menu i{
+    color: #d2e903;
+    font-size: 40px;
+}
+.menu-mobile{
+    background-color: #000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+    transition: .2s;
+}
+.menu-mobile .btn-fechar{
+    padding: 20px;
+}
+.menu-mobile .btn-fechar i{
+    color: #d2e903;
+    font-size: 30px 5%;
+
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block;
+}
+
+.menu-mobile nav ul{
+    text-align: right;
+}
+.menu-mobile nav ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}
+.menu-mobile nav ul li a:hover{
+    background-color: #d2e903;
+    color: #000;
+    
 }
 
 
@@ -341,3 +401,104 @@ footer .footer-fim p{
     color: #fff;
 }
 
+
+
+
+
+ /* cabecalho */
+@media screen and (max-width:950px){
+
+    /* class geral */
+    .flex{
+        flex-direction:column-reverse;
+    }
+    section{
+        min-height: 80vh;
+    }
+     section.topo .flex{
+        gap: 20px;
+    }
+
+    /* inicio */
+
+    .img-site img{
+        height: 90%;
+    }
+
+    .txt-topo h1{
+        color: #fff; 
+        font-size: 30px;
+        padding-left: 10px;
+       
+     }
+     .topo .txt-topo p{
+         color: #fff;
+         font-size: 20px;
+         padding: 10px;
+         }
+    /* sobre */
+    .sobre{
+        flex-direction: column;
+        padding: 0;
+    }
+    .sobre h1{
+        color: #fff;
+        padding: 10px;
+        font-size: 30px
+    }
+    .sobre p{
+        font-size: 20px;
+        margin-right: 60px;
+        padding: 10px;
+    }
+
+    .sobre img{
+        height: 0%;
+        width: 190%;
+        }
+
+     figure .foto-sobre{
+            width: 57%;
+            }
+    .sobre-nav{
+        align-items: center;
+        padding-left: 10px;
+    }
+    /* especialidades */
+    section.especialidades{
+        padding: 40px 0 80px 0;
+        }
+    .esp-geral{
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    
+    .especialidades-box a{
+        color: #8a9714;
+        font-size: 50px;
+    }
+    .especialidades-box H3{
+        color: #fff;
+        font-size: 20px;
+        margin: 2px 0;
+    }
+
+
+
+    /* portfolio */
+        .portfolio-flex{
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .port{
+            border-radius: 10px;
+            height: 250px;
+            
+        }
+    .cabeçalho-link,.btn-contato{
+        display: none; 
+    }
+}
